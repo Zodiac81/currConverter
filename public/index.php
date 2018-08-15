@@ -7,12 +7,13 @@ require __DIR__.'/../vendor/autoload.php';
 require __DIR__.'/../config/env.php';
 
 use App\FixerCurrency;
-//echo  getenv('CUSTOMER_API_KEY');
-$a = new FixerCurrency('http://data.fixer.io/api/');
-// print_r($a->getContent()) ;
- $rates =$a->getContent();
+use App\CurrentCurrency;
 
-foreach ($rates as $rate){
-	echo round($rate, 2)."<br>";
-}
- 
+
+
+$currency = new CurrentCurrency();
+$countries= $currency->getCountries();
+//print_r($countries);
+
+require 'converter_form.php';
+
