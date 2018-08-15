@@ -9,21 +9,20 @@ function convertCurrency()
         "from": from,
         "to": to
     };
-
-    // let request = $.param(data);
+//let request = $.param(data);
+    //console.log(request) ;
 
     $.ajax({
-        type:'POST',
-        dataType: 'html',
-        url: '../app/CurrencyHandler.php',
-        data:{'request':request},
+        type:"POST",
+        dataType: "html",
+        url: "../app/CurrencyHandler.php",
+        data:{"request":request},
         success: function (data){
-            console.log(data);
+           console.log(data);
         }
 
-    })
+    });
 
 }
-
 
 

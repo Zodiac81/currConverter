@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Currency Converter</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="assets/js/custom.js"></script>
+    
+   
 </head>
 <body>
 <div class="container">
@@ -19,7 +19,7 @@
                     </div>
                     <div class="col-sm-5">
                         <select class="form-control" name="currency-from" id="from">
-                           <?php foreach ($countries['symbols'] as $key=>$country):?>
+                           <?php foreach ($countries as $key=>$country):?>
                                 <option value="<?php echo $key?>" <?php if($key === 'USD'): echo 'selected';?><?php endif; ?> ><?php echo $country.' ('.$key .')'?></option>
                            <?php endforeach; ?>
                         </select>
@@ -31,9 +31,10 @@
                     </div>
                     <div class="col-sm-5">
                         <select class="form-control" name="currency-to" id="to" onchange="convertCurrency()">
-                            <?php foreach ($countries['symbols'] as $key=>$country): ?>
+                            <option selected disabled>Choose currency ...</option>
+                                <?php foreach ($countries as $key=>$country): ?>
                                 <option value="<?php echo $key ?>"><?php echo $country.' ('.$key .')'?></option>
-                            <?php endforeach; ?>
+                            <?php endforeach; ?> 
                         </select>
                     </div>
                 </div>
@@ -41,6 +42,7 @@
         </div>
     </div>
 </div>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="./assets/js/custom.js"></script>
 </body>
 </html>
