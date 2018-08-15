@@ -9,11 +9,10 @@ require __DIR__.'/../config/env.php';
 use App\FixerCurrency;
 use App\CurrentCurrency;
 
-
-
 $currency = new CurrentCurrency();
 $countries= $currency->getCountries();
-//print_r($countries);
+$a = $currency->getCurrentCurrency(100,"USD", "EUR");
+echo $a;
 
 require 'converter_form.php';
 
