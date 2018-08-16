@@ -2,7 +2,7 @@
 
 namespace App;
 
-class FixerCurrency
+final class FixerCurrency implements FixerCurrencyInterface
 {
 	protected $url;
 	//protected $endpoint = 'latest';
@@ -21,9 +21,9 @@ class FixerCurrency
         $json_data = curl_exec($ch);
         curl_close($ch);
 
-		$exchangeRates = json_decode($json_data, true);
-		
-      	return $exchangeRates;
+		$exchange_rates = json_decode($json_data, true);
+
+      	return $exchange_rates;
     }
-       
+
 }
