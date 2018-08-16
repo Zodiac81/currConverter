@@ -13,6 +13,5 @@ $currency = new CurrentCurrency();
 $countries= $currency->getCountries();
 $a = $currency->getCurrentCurrency(100,"USD", "EUR");
 echo $a;
-
 require 'converter_form.php';
 
